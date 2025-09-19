@@ -1,18 +1,20 @@
 import { useState } from "react";
 import "./Country.css"
 
-const Country = ({country}) => {
-    console.log(country);
-            const [visited, setVisited] =useState(false)
+const Country = ({country, handleVisitedCountries}) => {
+    // console.log('handleVisitedCountries');
+            const [visited, setVisited] = useState(false)
 
     const handleVisited = () => {
         // console.log('button clicked');
-        if(visited){
-            setVisited(false)
-        }
-        else{
-            setVisited(true)
-        }
+        // if(visited){
+        //     setVisited(false)
+        // }
+        // else{
+        //     setVisited(true)
+        // }
+        setVisited(!visited);
+        handleVisitedCountries(country);
     }
     
     return (
